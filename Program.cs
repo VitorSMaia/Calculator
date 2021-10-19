@@ -7,7 +7,7 @@ namespace Calculator
         static void Main(string[] args)
         {
             short operacao = Menu();
-            (float NumeroI,float NumeroII) = InputDados();
+            (float NumeroI,float NumeroII) = InputDados(operacao);
             Escolha(operacao,NumeroI,NumeroII);
         }
 
@@ -27,8 +27,12 @@ namespace Calculator
         }
 
 
-        static private (float NumeroI, float NumeroII) InputDados()
+        static private (float NumeroI, float NumeroII) InputDados(short operacao)
         {
+            if(operacao == 0)
+            {
+                System.Environment.Exit(0);
+            }
             Console.WriteLine($"Qual é o Primeiro Número?");
             var numeroI = float.Parse(Console.ReadLine());
             Console.WriteLine($"Qual é o Segundo Número?");
@@ -39,6 +43,7 @@ namespace Calculator
         
         static private void Escolha(short escolha, float numeroI, float numeroII)
         {
+            var Response = new Response();
            switch (escolha)
             {
                 case 1: Response.Response.Soma(numeroI,numeroII);                break;

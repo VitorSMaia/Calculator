@@ -6,23 +6,19 @@ namespace Calculator.Calculate
     {
         public static float SomaCalc(float numeroI, float numeroII)
         {
-            float result = numeroI + numeroII;
-            return result;
+            return numeroI + numeroII;
         }
         public static float SubtrairCalc(float numeroI, float numeroII)
         {
-            float result = numeroI - numeroII;
-            return result;
+            return numeroI - numeroII;
         }
         public static float DividirCalc(float numeroI, float numeroII)
         {
-            float result = numeroI / numeroII;
-            return result;
+            return numeroI / numeroII;
         }
         public static float MultiplicarCalc(float numeroI, float numeroII)
         {
-            float result = numeroI * numeroII;
-            return result;
+            return numeroI * numeroII;
         }
     }
 }
