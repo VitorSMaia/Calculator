@@ -7,12 +7,11 @@ namespace Calculator
         static void Main(string[] args)
         {
             short operacao = Menu();
-            float NumeroI = InputDados("Primeiro");
-            float NumeroII = InputDados("Segundo");
+            (float NumeroI,float NumeroII) = InputDados();
             Escolha(operacao,NumeroI,NumeroII);
         }
 
-        static short Menu()
+        static private short Menu()
         {
             Console.Clear();
             Console.WriteLine("Qual Tipo de Operação Você Gostaria de Fazer?");
@@ -28,15 +27,17 @@ namespace Calculator
         }
 
 
-        static float InputDados(string ordem)
+        static private (float NumeroI, float NumeroII) InputDados()
         {
-            Console.WriteLine($"Qual é o {ordem} Número?");
-            float numero = float.Parse(Console.ReadLine());
+            Console.WriteLine($"Qual é o Primeiro Número?");
+            var numeroI = float.Parse(Console.ReadLine());
+            Console.WriteLine($"Qual é o Segundo Número?");
+            var numeroII = float.Parse(Console.ReadLine());
 
-            return numero;
+            return (numeroI,numeroII);
         }
         
-        static void Escolha(short escolha, float numeroI, float numeroII)
+        static private void Escolha(short escolha, float numeroI, float numeroII)
         {
            switch (escolha)
             {
