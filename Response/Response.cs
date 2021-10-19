@@ -1,7 +1,5 @@
 using System;
 
-using Calculator.Calculate;
-
 namespace Calculator.Response
 {
     public class Response
