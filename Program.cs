@@ -46,30 +46,30 @@ namespace Calculator
         static private void Resultado(short operador, float numeroI, float numeroII)
         {
             var operacao = new Calculadora(numeroI, numeroII);
-            var mensagem = new Resposta();
+            var mensagem = new Resposta(numeroI, numeroII);
 
             if(operador == 1)
             {
                     float resultado = operacao.Somar();
-                    string msg = mensagem.Mensagem(operador, numeroI, numeroII, resultado);
+                    string msg = mensagem.MensagemSomar(resultado);
                     Console.WriteLine(msg);
             }
             else if(operador == 2)
             {
                     float resultado = operacao.Subtrair();
-                    string msg = mensagem.Mensagem(operador, numeroI, numeroII, resultado);
+                    string msg = mensagem.MensagemSubtrair(resultado);
                     Console.WriteLine(msg);
             }
             else if(operador == 3)
             {
                     float resultado = operacao.Multiplicar();
-                    string msg = mensagem.Mensagem(operador, numeroI, numeroII, resultado);
+                    string msg = mensagem.MensagemMultiplicar(resultado);
                     Console.WriteLine(msg);
             }
             else if(operador == 4)
             {
                     float resultado = operacao.Dividir();
-                    string msg = mensagem.Mensagem(operador, numeroI, numeroII, resultado);
+                    string msg = mensagem.MensagemDividir(resultado);
                     Console.WriteLine(msg);
             }
         }
@@ -113,28 +113,29 @@ namespace Calculator
     }
     class Resposta
     {
-        public Resposta()
+        public float NumeroI;
+        public float NumeroII;
+        public float Resultado;
+        public Resposta(float numeroI, float numeroII)
         {
-
+            NumeroI = numeroI;
+            NumeroII = numeroII;
         }
-        public string Mensagem(short operador, float numeroI, float numeroII,float resultado)
+        public string MensagemSomar(float resultado)
         {
-            switch(operador)
-            {
-                case 1: 
-                    return $"O Resultado de {numeroI} + {numeroII} é igual {resultado}!";
-
-                case 2: 
-                    return $"O Resultado de {numeroI} - {numeroII} é igual {resultado}!";
-
-                case 3: 
-                    return $"O Resultado de {numeroI} * {numeroII} é igual {resultado}!";
-
-                case 4: 
-                    return $"O Resultado de {numeroI} / {numeroII} é igual {resultado}!";
-
-            }
-            return "0";
+            return $"O Resultado de {NumeroI} + {NumeroII} é igual {resultado}!";
+        }
+        public string MensagemSubtrair(float resultado)
+        {
+            return $"O Resultado de {NumeroI} - {NumeroII} é igual {resultado}!";
+        }
+        public string MensagemDividir(float resultado)
+        {
+            return $"O Resultado de {NumeroI} / {NumeroII} é igual {resultado}!";
+        }
+        public string MensagemMultiplicar(float resultado)
+        {
+            return $"O Resultado de {NumeroI} * {NumeroII} é igual {resultado}!";
         }
     }
 }
