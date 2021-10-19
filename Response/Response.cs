@@ -18,7 +18,7 @@ namespace Calculator.Response
         {
             if(numeroII == 0)
             {
-                Console.WriteLine("Error o Segundo número não pode ser 0");
+                Console.WriteLine($"Error o Segundo número não pode ser {numeroII}");
             }else{
              Console.WriteLine("A Divisão dos números " + numeroI + " e o " + numeroII + " é " + Calculate.Calculate.DividirCalc(numeroI,numeroII));
             }
