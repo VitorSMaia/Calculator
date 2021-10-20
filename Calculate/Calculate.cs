@@ -1,24 +1,33 @@
 using System;
 
-namespace Calculator.Calculate
+namespace Calculate
 {
-    public class Calculate
+    class Calculadora
     {
-        public static float SomaCalc(float numeroI, float numeroII)
+        public float  NumeroI{get;set;}
+        public float  NumeroII{get;set;}
+
+        public Calculadora(float numeroI, float numeroII)
         {
-            return numeroI + numeroII;
+            NumeroI = numeroI;
+            NumeroII = numeroII;
         }
-        public static float SubtrairCalc(float numeroI, float numeroII)
+
+        public float Somar()
         {
-            return numeroI - numeroII;
+            return NumeroI + NumeroII;
         }
-        public static float DividirCalc(float numeroI, float numeroII)
+        public float Subtrair()
         {
-            return numeroI / numeroII;
+            return NumeroI - NumeroII;
         }
-        public static float MultiplicarCalc(float numeroI, float numeroII)
+        public float Multiplicar()
         {
-            return numeroI * numeroII;
+            return NumeroI * NumeroII;
+        }
+        public float Dividir()
+        {
+            return NumeroI / NumeroII;
         }
     }
 }
