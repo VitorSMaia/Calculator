@@ -1,29 +1,32 @@
 using System;
 
-namespace Calculator.Response
+namespace Resposta
 {
-    public class Response
+    public class Resposta
     {
-        public static void Soma(float numeroI, float numeroII)
+        public float NumeroI;
+        public float NumeroII;
+        public float Resultado;
+        public Resposta(float numeroI, float numeroII)
         {
-            Console.WriteLine($"A Soma dos números {numeroI} e o {numeroII} é {Calculate.Calculate.SomaCalc(numeroI,numeroII)}");
+            NumeroI = numeroI;
+            NumeroII = numeroII;
         }
-        public static void Subtrair(float numeroI, float numeroII)
+        public string MensagemSomar(float resultado)
         {
-            Console.Write($"A Subtração dos números {numeroI} e o {numeroII} é {Calculate.Calculate.SubtrairCalc(numeroI,numeroII)}");
+            return $"O Resultado de {NumeroI} + {NumeroII} é igual {resultado}!";
         }
-        public static void Dividir(float numeroI, float numeroII)
+        public string MensagemSubtrair(float resultado)
         {
-            if(numeroII == 0)
-            {
-                Console.WriteLine($"Error o Segundo número não pode ser {numeroII}");
-            }else{
-             Console.WriteLine("A Divisão dos números " + numeroI + " e o " + numeroII + " é " + Calculate.Calculate.DividirCalc(numeroI,numeroII));
-            }
+            return $"O Resultado de {NumeroI} - {NumeroII} é igual {resultado}!";
         }
-        public static void Multiplicar(float numeroI, float numeroII)
+        public string MensagemDividir(float resultado)
         {
-            Console.Write($"A Multiplicação dos números {numeroI} e o {numeroII} é {Calculate.Calculate.MultiplicarCalc(numeroI,numeroII)}");
+            return $"O Resultado de {NumeroI} / {NumeroII} é igual {resultado}!";
+        }
+        public string MensagemMultiplicar(float resultado)
+        {
+            return $"O Resultado de {NumeroI} * {NumeroII} é igual {resultado}!";
         }
     }
 }
