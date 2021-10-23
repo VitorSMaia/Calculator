@@ -1,6 +1,5 @@
 ﻿using System;
 
-// using Resposta;
 namespace Calculator
 {
     class Program
@@ -69,12 +68,13 @@ namespace Calculator
                     System.Environment.Exit(0);
                 break;
             }
+            Console.WriteLine(mensagem);
         }
         static private void ValidaDenominador(float NumeroII)
         {
             if( NumeroII == 0 )
             {
-                Console.WriteLine("O Segundo Denominador não pode ser 0 !");
+                Console.WriteLine("O Denominador não pode ser 0!");
                 System.Environment.Exit(0);
             }
         }

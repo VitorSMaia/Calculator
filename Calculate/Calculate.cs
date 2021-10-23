@@ -2,7 +2,7 @@ using System;
 
 namespace Calculadora
 {
-   class Calculadora
+    class Calculadora
     {
         public float  NumeroI{get;set;}
         public float  NumeroII{get;set;}
