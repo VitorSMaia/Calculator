@@ -1,6 +1,6 @@
 using System;
 
-namespace Resposta
+namespace Calculator
 {
     public class Resposta
     {

@@ -38,8 +38,8 @@ namespace Calculator
         }
         static private void Resultado(short operador, float numeroI, float numeroII)
         {
-            var operacao = new Calculadora.Calculadora(numeroI, numeroII);
-            var mensagem = new Resposta.Resposta(numeroI, numeroII);
+            var operacao = new Calculadora(numeroI, numeroII);
+            var mensagem = new Resposta(numeroI, numeroII);
             
             switch(operador)
             {
