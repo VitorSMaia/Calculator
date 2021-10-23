@@ -45,8 +45,8 @@ namespace Calculator
             {
                 case 1: 
                     float resultadoSomar = operacao.Somar();
-                    string msg = mensagem.MensagemSomar(resultadoSomar);
-                    Console.WriteLine(msg);
+                    string msgSomar = mensagem.MensagemSomar(resultadoSomar);
+                    Console.WriteLine(msgSomar);
                 break;
                 case 2: 
                     float resultadoSubtrair = operacao.Subtrair();
@@ -68,7 +68,6 @@ namespace Calculator
                     System.Environment.Exit(0);
                 break;
             }
-            Console.WriteLine(mensagem);
         }
         static private void ValidaDenominador(float NumeroII)
         {
