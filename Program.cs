@@ -9,7 +9,7 @@ namespace Calculator
             short operador = Menu();
             ValidaOpcao(operador);
             (float NumeroI,float NumeroII) = InputDados();
-            Resultado(operador,NumeroI,NumeroII);
+            Calcular(operador,NumeroI,NumeroII,0);
         }
         static private short Menu()
         {
@@ -36,38 +36,40 @@ namespace Calculator
 
             return (numeroI,numeroII);
         }
-        static private void Resultado(short operador, float numeroI, float numeroII)
+        static private void Calcular(short operador, float numeroI, float numeroII, float resultado)
         {
             var operacao = new Calculadora(numeroI, numeroII);
-            var mensagem = new Resposta(numeroI, numeroII);
+            
             
             switch(operador)
             {
                 case 1: 
-                    float resultadoSomar = operacao.Somar();
-                    string msgSomar = mensagem.MensagemSomar(resultadoSomar);
-                    Console.WriteLine(msgSomar);
+                    resultado = operacao.Somar();
+                    MostrarResultado(numeroI, numeroII, resultado);
                 break;
                 case 2: 
-                    float resultadoSubtrair = operacao.Subtrair();
-                    string msgSubtrair = mensagem.MensagemSubtrair(resultadoSubtrair);
-                    Console.WriteLine(msgSubtrair);
+                    resultado = operacao.Subtrair();
+                    MostrarResultado(numeroI, numeroII, resultado);
                 break;
                 case 3: 
-                    float resultadoMultiplicar = operacao.Multiplicar();
-                    string msgMultiplicar = mensagem.MensagemMultiplicar(resultadoMultiplicar);
-                    Console.WriteLine(msgMultiplicar);
+                    resultado = operacao.Multiplicar();
+                    MostrarResultado(numeroI, numeroII, resultado);
                 break;
                 case 4:
-                    float resultadoDividir = operacao.Dividir();
-                    string msgDividir = mensagem.MensagemDividir(resultadoDividir);
-                    Console.WriteLine(msgDividir);
+                    resultado = operacao.Dividir();
+                    MostrarResultado(numeroI, numeroII, resultado);
                 break;
                 default:
                     Console.Write("Opção Inválida");
                     System.Environment.Exit(0);
                 break;
             }
+        }
+        static private void MostrarResultado(float numeroI, float numeroII, float resultado)
+        {
+            var mensagem = new Resposta(numeroI, numeroII);
+            string msg = mensagem.MensagemSomar(resultado);
+            Console.WriteLine(msg);
         }
         static private void ValidaDenominador(float NumeroII)
         {
