@@ -9,9 +9,9 @@
 * *Meu repositório* - [Github](https://github.com/VitorSMaia/)
 * *Meu perfil profissional no* [LinkedIn](https://www.linkedin.com/in/vitorsmaia/)
 
-## Showcase
+## Ferramentas
 
-This project was designed to demonstrate:
+Este projeto foi elaborado utilizando as seguintes linguagens e frameworks
 
 * Framework
   * .net 5.0
