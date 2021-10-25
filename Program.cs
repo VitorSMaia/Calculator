@@ -39,36 +39,49 @@ namespace Calculator
         static private void Calcular(short operador, float numeroI, float numeroII, float resultado)
         {
             var operacao = new Calculadora(numeroI, numeroII);
-            
-            
+        
             switch(operador)
             {
                 case 1: 
                     resultado = operacao.Somar();
-                    MostrarResultado(numeroI, numeroII, resultado);
                 break;
                 case 2: 
                     resultado = operacao.Subtrair();
-                    MostrarResultado(numeroI, numeroII, resultado);
                 break;
                 case 3: 
                     resultado = operacao.Multiplicar();
-                    MostrarResultado(numeroI, numeroII, resultado);
                 break;
                 case 4:
                     resultado = operacao.Dividir();
-                    MostrarResultado(numeroI, numeroII, resultado);
                 break;
                 default:
                     Console.Write("Opção Inválida");
                     System.Environment.Exit(0);
                 break;
             }
+            
+            MostrarResultado(numeroI, numeroII, resultado,operador);
         }
-        static private void MostrarResultado(float numeroI, float numeroII, float resultado)
+        static private void MostrarResultado(float numeroI, float numeroII, float resultado,int operador)
         {
             var mensagem = new Resposta(numeroI, numeroII);
-            string msg = mensagem.MensagemSomar(resultado);
+            var msg = "";
+            switch(operador)
+            {
+                case 1:
+                    msg = mensagem.MensagemSomar(resultado);
+                break;
+                case 2:
+                    msg = mensagem.MensagemSubtrair(resultado);
+                break;
+                case 3:
+                    msg = mensagem.MensagemMultiplicar(resultado);
+                break;
+                case 4:
+                    msg = mensagem.MensagemDividir(resultado);
+                break;
+            }
+            
             Console.WriteLine(msg);
         }
         static private void ValidaDenominador(float NumeroII)
